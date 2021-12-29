@@ -148,6 +148,7 @@ public class AddEditJobController implements Initializable {
         productsSoldTableQuantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         try {
             currentJob = JobListController.jobToEdit;
+            addProductsTable.setItems(getAllProducts());
             if (currentJob.getProgress().equals("Completed")) {
                 removeProductButton.setDisable(true);
                 addProductButton.setDisable(true);
@@ -164,10 +165,10 @@ public class AddEditJobController implements Initializable {
                 addProductsTableQuantityTextField.setEditable(false);
                 productsSoldTableQuantityTextField.setEditable(false);
             }
-            if (getItemsForJob(jobToEdit).isEmpty()) {
-                productsToAdd = getAllProducts();
-                addProductsTable.setItems(productsToAdd);
-            }
+//            if (getItemsForJob(jobToEdit).isEmpty()) {
+//                productsToAdd = getAllProducts();
+//                addProductsTable.setItems(productsToAdd);
+//            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -324,12 +325,14 @@ public class AddEditJobController implements Initializable {
                         System.out.println(2);
                         if (a.getResult() == ButtonType.OK) {
                             DBJobs.dbUpdateJob(jobToEdit);
+                            currentJob = jobToEdit;
                             Alerts.informationAlerts(6);
                             addProductButton.setDisable(true);
                             removeProductButton.setDisable(true);
                         }
                     } else {
                         DBJobs.dbUpdateJob(jobToEdit);
+                        currentJob = (jobToEdit);
                         Alerts.informationAlerts(6);
                         System.out.println(4);
                     }
@@ -344,10 +347,12 @@ public class AddEditJobController implements Initializable {
                     a.showAndWait();
                     if (a.getResult() == ButtonType.OK) {
                         DBJobs.dbAddJob(jobToAdd);
+                        currentJob = jobToAdd;
                         Alerts.informationAlerts(5);
                     }
                 } else {
                     DBJobs.dbAddJob(jobToAdd);
+                    currentJob = jobToAdd;
                     Alerts.informationAlerts(5);
                 }
             }
@@ -387,8 +392,8 @@ public class AddEditJobController implements Initializable {
                 JobInvoice newInvoice = new JobInvoice(currentJob.getJobID(), productID, quantityToAdd, modelNumber, productPrice, productCategory, productBrand);
                 DBJobInvoice.dbAddJobItem(newInvoice);
                 productsAdded.add(newInvoice);
-                productsToAdd.remove(productToAdd);
-                addProductsTable.setItems(productsToAdd);
+                //productsToAdd.remove(productToAdd);
+                //addProductsTable.setItems(productsToAdd);
                 productsSoldTable.setItems(productsAdded);
                 addProductsTableQuantityTextField.clear();
             } catch (Exception e) {
@@ -423,9 +428,9 @@ public class AddEditJobController implements Initializable {
                 }
             }
             dbDeleteJobItem(currentlySelected);
-            productsToAdd.add(productToAddBack);
+            //productsToAdd.add(productToAddBack);
             productsAdded.remove(currentlySelected);
-            addProductsTable.setItems(productsToAdd);
+            //addProductsTable.setItems(productsToAdd);
             productsSoldTable.setItems(productsAdded);
         } else {
             productsAdded.remove(currentlySelected);

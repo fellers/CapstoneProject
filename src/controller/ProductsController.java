@@ -97,6 +97,7 @@ public class ProductsController implements Initializable {
                 Product productToAdd = new Product(modelNumberInput, priceInput, categoryInput, brandInput);
                 dbAddProduct(productToAdd);
                 productsTable.setItems(getAllProducts());
+                modified = true;
                 clearAllFields();
             } else {
                 Product productToAdd = new Product(productToModify.getProductID(), modelNumberInput, priceInput, brandInput, categoryInput);

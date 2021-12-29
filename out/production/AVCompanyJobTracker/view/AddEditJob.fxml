@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane prefHeight="660.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddEditJobController">
+   <content>
+      <VBox alignment="TOP_CENTER" prefHeight="898.0" prefWidth="975.0" spacing="10.0">
+         <children>
+            <HBox alignment="CENTER" maxWidth="-Infinity" prefHeight="41.0" prefWidth="950.0">
+               <children>
+                  <Label text="Add/Edit Job">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </HBox>
+            <GridPane maxWidth="-Infinity" prefHeight="125.0" prefWidth="950.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Job Name" />
+                  <Label text="Current Status" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Label text="Project Manager" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Label text="Client" GridPane.columnIndex="2" />
+                  <Label text="Final Installation Date" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <TextField fx:id="jobNameTextField" maxWidth="-Infinity" prefWidth="175.0" GridPane.columnIndex="1" />
+                  <ComboBox fx:id="clientComboBox" prefWidth="175.0" GridPane.columnIndex="3" />
+                  <DatePicker fx:id="finalInstallDatePicker" prefWidth="175.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <ComboBox fx:id="projectManagerComboBox" maxWidth="-Infinity" prefWidth="175.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="currentStatusComboBox" prefWidth="175.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <Label text="Address/Lot Number" GridPane.rowIndex="1" />
+                  <TextField fx:id="addressTextField" maxWidth="-Infinity" prefWidth="175.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="City" GridPane.rowIndex="2" />
+                  <Label text="Zip Code" GridPane.rowIndex="3" />
+                  <TextField fx:id="cityTextField" maxWidth="-Infinity" prefWidth="175.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="zipCodeTextField" maxWidth="-Infinity" prefWidth="175.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+               </children>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </GridPane>
+            <HBox alignment="CENTER_RIGHT" prefHeight="119.0" prefWidth="950.0">
+               <children>
+                  <Label prefHeight="66.0" prefWidth="99.0" text="Additional Notes" textAlignment="CENTER" wrapText="true">
+                     <HBox.margin>
+                        <Insets left="15.0" right="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextArea fx:id="jobNotesTextArea" prefHeight="127.0" prefWidth="840.0" />
+               </children>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT">
+               <children>
+                  <Button fx:id="saveJobButton" mnemonicParsing="false" onAction="#saveJobButton" text="Save Job" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="38.0" prefWidth="950.0">
+               <children>
+                  <Label text="Add Products">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" maxWidth="-Infinity" prefHeight="45.0" prefWidth="950.0">
+               <children>
+                  <TextField fx:id="addProductsTableSearchTextField" promptText="Enter Keyword">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button mnemonicParsing="false" onAction="#addProductsTableSearchButton" text="Search">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <ComboBox fx:id="addProductsTableSearchComboBox" prefWidth="150.0" promptText="Search By...">
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </HBox.margin>
+                  </ComboBox>
+                  <TextField fx:id="addProductsTableQuantityTextField" onAction="#addProductQuantityEnterPressed" prefWidth="90.0" promptText="Enter Quantity">
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button fx:id="addProductButton" mnemonicParsing="false" onAction="#addProductButton" text="Add Product">
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox maxWidth="-Infinity" prefHeight="151.0" prefWidth="950.0">
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+               <children>
+                  <TableView fx:id="addProductsTable" prefHeight="151.0" prefWidth="940.0">
+                    <columns>
+                      <TableColumn fx:id="addProductsTableModelNumber" prefWidth="236.6666717529297" text="Model Number" />
+                      <TableColumn fx:id="addProductsTableCategory" prefWidth="211.0" text="Category" />
+                        <TableColumn fx:id="addProductsTableBrand" prefWidth="303.0" text="Brand" />
+                        <TableColumn fx:id="addProductsTablePrice" prefWidth="186.6666259765625" text="Price" />
+                    </columns>
+                  </TableView>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="38.0" prefWidth="950.0">
+               <children>
+                  <Label text="Products Sold">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="950.0">
+               <children>
+                  <TextField fx:id="productsSoldTableSearchTextField" promptText="Enter Keyword">
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button mnemonicParsing="false" onAction="#productsSoldTableSearchButton" text="Search">
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <ComboBox fx:id="productsSoldTableSearchComboBox" prefWidth="150.0" promptText="Search By...">
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </HBox.margin>
+                  </ComboBox>
+                  <TextField fx:id="productsSoldTableQuantityTextField" onAction="#removeProductQuantityEnterPressed" prefWidth="90.0" promptText="Enter Quantity">
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button fx:id="removeProductButton" mnemonicParsing="false" onAction="#removeProductButton" text="Remove Product">
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="151.0" prefWidth="950.0">
+               <children>
+                  <TableView fx:id="productsSoldTable" prefHeight="151.0" prefWidth="940.0">
+                     <columns>
+                        <TableColumn fx:id="productsSoldTableModelNumber" prefWidth="209.0" text="Model Number" />
+                        <TableColumn fx:id="productsSoldTableCategory" prefWidth="239.33334350585938" text="Category" />
+                        <TableColumn fx:id="productsSoldTableBrand" prefWidth="240.66665649414062" text="Brand" />
+                        <TableColumn fx:id="productsSoldTablePrice" prefWidth="142.33331298828125" text="Price" />
+                        <TableColumn fx:id="productsSoldTableQuantity" prefWidth="108.33331298828125" text="Quantity" />
+                     </columns>
+                  </TableView>
+               </children>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="975.0">
+               <children>
+                  <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelButton" text="Back">
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>
