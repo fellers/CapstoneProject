@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProjectManagerReportsController">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="750.0">
+         <children>
+            <Label text="Project Manager Reports">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="68.0" prefWidth="750.0" spacing="20.0">
+               <children>
+                  <Label text="Select a project manager to view their reports:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox fx:id="projectManagerReportsComboBox" prefWidth="150.0" />
+                  <Button mnemonicParsing="false" onAction="#getReportsButtonAction" text="Get Reports" />
+               </children>
+            </HBox>
+            <HBox prefHeight="344.0" prefWidth="750.0">
+               <children>
+                  <TableView fx:id="jobsTable" prefHeight="324.0" prefWidth="652.0">
+                    <columns>
+                      <TableColumn fx:id="jobNameColumn" prefWidth="129.0" text="Job Name" />
+                      <TableColumn fx:id="clientColumn" prefWidth="154.0" text="Client" />
+                        <TableColumn fx:id="statusColumn" prefWidth="115.0" text="Status" />
+                        <TableColumn fx:id="finalInstallDateColumn" prefWidth="137.0" text="Final Install Date" />
+                    </columns>
+                     <HBox.margin>
+                        <Insets bottom="20.0" left="20.0" />
+                     </HBox.margin>
+                  </TableView>
+                  <VBox alignment="CENTER" prefHeight="398.0" prefWidth="310.0" spacing="35.0">
+                     <children>
+                        <Label text="Jobs In Progress:">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="jobsInProgressLabel" text="0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label text="Jobs Completed:">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="jobsCompletedLabel" text="0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="750.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#backButton" text="Back">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

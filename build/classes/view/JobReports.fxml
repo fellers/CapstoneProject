@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.JobReportsController">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="750.0">
+         <children>
+            <Label text="Job Reports">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="750.0" spacing="20.0">
+               <children>
+                  <Label text="Select a Job to view its report:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="jobsComboBox" prefWidth="150.0" promptText="Please Select..." />
+                  <Button mnemonicParsing="false" onAction="#getReportButton" text="Get Report" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="307.0" prefWidth="750.0">
+               <children>
+                  <TableView fx:id="jobItemsTable" prefHeight="307.0" prefWidth="388.0">
+                    <columns>
+                      <TableColumn fx:id="modelNumberColumn" prefWidth="159.0" text="Model Number" />
+                      <TableColumn fx:id="priceColumn" prefWidth="130.0" text="Price" />
+                        <TableColumn fx:id="quantityColumn" prefWidth="98.0" text="Quantity" />
+                    </columns>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </TableView>
+                  <VBox alignment="CENTER" prefHeight="307.0" prefWidth="343.0" spacing="15.0">
+                     <children>
+                        <Label text="Salesman:">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="salesmanLabel">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Project Manager:">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="projectManagerLabel">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Status:">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="statusLabel">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Last Edit:">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lastEditLabel">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="107.0" prefWidth="750.0">
+               <children>
+                  <VBox alignment="BOTTOM_LEFT" prefHeight="107.0" prefWidth="146.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#backButton" text="Back">
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="20.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER" prefHeight="107.0" prefWidth="478.0" spacing="10.0">
+                     <children>
+                        <Label text="Total Job Cost:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="totalCostLabel" text="\$0.00">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainScreenController">
+   <children>
+      <HBox alignment="CENTER" layoutY="14.0" prefHeight="78.0" prefWidth="602.0">
+         <children>
+            <Label fx:id="welcomeLabel" text="Label">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox fx:id="salesHBox" alignment="CENTER" layoutY="111.0" prefHeight="41.0" prefWidth="602.0">
+         <children>
+            <Label text="Edit or add jobs, clients, and products using the buttons below:" />
+         </children>
+      </HBox>
+      <GridPane fx:id="salesGridPane" alignment="CENTER" layoutY="152.0" prefHeight="66.0" prefWidth="602.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button mnemonicParsing="false" onAction="#clientsButton" text="Clients" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#jobsButton" text="Jobs" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#productsButton" text="Products" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <HBox alignment="CENTER" layoutY="239.0" prefHeight="41.0" prefWidth="602.0">
+         <children>
+            <Label text="Use the following options to view reports" />
+         </children>
+      </HBox>
+      <GridPane layoutY="280.0" prefHeight="66.0" prefWidth="602.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button mnemonicParsing="false" onAction="#salesReportsButton" text="Sales Reports" />
+            <Button mnemonicParsing="false" onAction="#jobReportsButton" text="Job Reports" GridPane.columnIndex="2" />
+            <Button mnemonicParsing="false" onAction="#projectManagersReportsButton" text="Project Manager Reports" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+      <HBox alignment="CENTER" layoutY="359.0" prefHeight="41.0" prefWidth="91.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#logoutButtonAction" text="Logout" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
